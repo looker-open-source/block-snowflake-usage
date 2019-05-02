@@ -48,7 +48,7 @@ grant select on all tables in schema SNOWFLAKE.ACCOUNT_USAGE to role looker_role
 
 
 #### Dashboards
-The dashboard can be used as is, or customized to your specific requirements. If you've customized the model name, rename the model in each LookML Dashboard element from "snowflake-usage" to the model name you've selected. We recommend using a global Find & Replace for this.
+The dashboard can be used as is, or customized to your specific requirements. If you've customized the model name, rename the model in each LookML Dashboard element from "snowflake_usage" to the model name you've selected. We recommend using a global Find & Replace for this.
 
 ## What if I find an error? Suggestions for improvements?
 Great! Blocks were designed for continuous improvement through the help of the entire Looker community, and we'd love your input. To log an error or improvement recommentation, simply create a "New Issue" in the corresponding Github repo for this Block. Please be as detailed as possible in your explanation, and we'll address it as quick as we can.

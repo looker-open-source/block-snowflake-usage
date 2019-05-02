@@ -4,7 +4,7 @@
   elements:
   - title: Warehouse Metering History - Total Credits by Month
     name: Warehouse Metering History - Total Credits by Month
-    model: snowflake-usage
+    model: snowflake_usage
     explore: warehouse_metering_history
     type: looker_column
     fields:
@@ -52,7 +52,7 @@
     height: 8
   - title: Total Jobs by Warehouse (MTD)
     name: Total Jobs by Warehouse (MTD)
-    model: snowflake-usage
+    model: snowflake_usage
     explore: query_history
     type: looker_column
     fields:
@@ -114,9 +114,9 @@
       - id: query_history.count
         name: Query History
         axisId: query_history.count
-        __FILE: snowflake-usage/account_usage_dashboard.dashboard.lookml
+        __FILE: snowflake_usage/account_usage_dashboard.dashboard.lookml
         __LINE_NUM: 213
-      __FILE: snowflake-usage/account_usage_dashboard.dashboard.lookml
+      __FILE: snowflake_usage/account_usage_dashboard.dashboard.lookml
       __LINE_NUM: 201
     listen: {}
     row: 16
@@ -125,7 +125,7 @@
     height: 8
   - title: Average Execution Time by User (MTD)
     name: Average Execution Time by User (MTD)
-    model: snowflake-usage
+    model: snowflake_usage
     explore: query_history
     type: looker_column
     fields:
@@ -188,9 +188,9 @@
       - id: query_history.average_execution_time
         name: Average Execution Time
         axisId: query_history.average_execution_time
-        __FILE: snowflake-usage/account_usage_dashboard.dashboard.lookml
+        __FILE: snowflake_usage/account_usage_dashboard.dashboard.lookml
         __LINE_NUM: 287
-      __FILE: snowflake-usage/account_usage_dashboard.dashboard.lookml
+      __FILE: snowflake_usage/account_usage_dashboard.dashboard.lookml
       __LINE_NUM: 275
     listen: {}
     row: 31
@@ -199,7 +199,7 @@
     height: 8
   - title: Credits Used By Warehouse
     name: Credits Used By Warehouse
-    model: snowflake-usage
+    model: snowflake_usage
     explore: warehouse_metering_history
     type: looker_column
     fields:
@@ -245,7 +245,7 @@
     height: 8
   - title: Failed Logins by User (MTD)
     name: Failed Logins by User (MTD)
-    model: snowflake-usage
+    model: snowflake_usage
     explore: login_history
     type: table
     fields:
@@ -297,7 +297,7 @@
     height: 7
   - title: Failed Logins by User and Connecting Client (MTD)
     name: Failed Logins by User and Connecting Client (MTD)
-    model: snowflake-usage
+    model: snowflake_usage
     explore: login_history
     type: table
     fields:
@@ -360,7 +360,7 @@
     height: 9
   - title: Untitled3
     name: Untitled3
-    model: snowflake-usage
+    model: snowflake_usage
     explore: storage_usage
     type: single_value
     fields:
@@ -407,7 +407,7 @@
     height: 4
   - title: Total Jobs (MTD)
     name: Total Jobs (MTD)
-    model: snowflake-usage
+    model: snowflake_usage
     explore: query_history
     type: single_value
     fields:
@@ -454,7 +454,7 @@
     height: 4
   - title: Untitled
     name: Untitled
-    model: snowflake-usage
+    model: snowflake_usage
     explore: warehouse_metering_history
     type: single_value
     fields:
@@ -501,7 +501,7 @@
     height: 4
   - title: Credits Used Over Time by Warehouse (MTD)
     name: Credits Used Over Time by Warehouse (MTD)
-    model: snowflake-usage
+    model: snowflake_usage
     explore: warehouse_metering_history
     type: looker_line
     fields:
@@ -551,7 +551,7 @@
     height: 8
   - title: Data Loading
     name: Data Loading
-    model: snowflake-usage
+    model: snowflake_usage
     explore: load_history
     type: single_value
     fields:
@@ -603,7 +603,7 @@
       - id: load_history.total_row_count
         name: Load History Total Row Count
         axisId: load_history.total_row_count
-        __FILE: snowflake-usage/account_usage_dashboard.dashboard.lookml
+        __FILE: snowflake_usage/account_usage_dashboard.dashboard.lookml
         __LINE_NUM: 924
       showLabels: true
       showValues: true
@@ -612,7 +612,7 @@
       tickDensity: default
       tickDensityCustom: 5
       type: linear
-      __FILE: snowflake-usage/account_usage_dashboard.dashboard.lookml
+      __FILE: snowflake_usage/account_usage_dashboard.dashboard.lookml
       __LINE_NUM: 921
     x_axis_label: Load Date
     single_value_title: Rows Loaded Last 7 Days
@@ -624,7 +624,7 @@
     height: 7
   - title: Total Rows Loaded - Last 2 Weeks
     name: Total Rows Loaded - Last 2 Weeks
-    model: snowflake-usage
+    model: snowflake_usage
     explore: load_history
     type: looker_column
     fields:
@@ -673,7 +673,7 @@
       - id: load_history.total_row_count
         name: Load History Total Row Count
         axisId: load_history.total_row_count
-        __FILE: snowflake-usage/account_usage_dashboard.dashboard.lookml
+        __FILE: snowflake_usage/account_usage_dashboard.dashboard.lookml
         __LINE_NUM: 990
       showLabels: true
       showValues: true
@@ -682,7 +682,7 @@
       tickDensity: default
       tickDensityCustom: 5
       type: linear
-      __FILE: snowflake-usage/account_usage_dashboard.dashboard.lookml
+      __FILE: snowflake_usage/account_usage_dashboard.dashboard.lookml
       __LINE_NUM: 987
     x_axis_label: Load Date
     listen: {}
@@ -692,7 +692,7 @@
     height: 7
   - title: Average Execution Time by Query Type and Warehouse Size (MTD)
     name: Average Execution Time by Query Type and Warehouse Size (MTD)
-    model: snowflake-usage
+    model: snowflake_usage
     explore: query_history
     type: looker_column
     fields:
@@ -762,9 +762,9 @@
       - id: query_history.average_execution_time
         name: Average Execution Time
         axisId: query_history.average_execution_time
-        __FILE: snowflake-usage/account_usage_dashboard.dashboard.lookml
+        __FILE: snowflake_usage/account_usage_dashboard.dashboard.lookml
         __LINE_NUM: 365
-      __FILE: snowflake-usage/account_usage_dashboard.dashboard.lookml
+      __FILE: snowflake_usage/account_usage_dashboard.dashboard.lookml
       __LINE_NUM: 353
     x_axis_reversed: false
     y_axis_reversed: false
@@ -777,7 +777,7 @@
     height: 8
   - title: Execution Time on Select Statements
     name: Execution Time on Select Statements
-    model: snowflake-usage
+    model: snowflake_usage
     explore: query_history
     type: single_value
     fields:
@@ -829,7 +829,7 @@
     height: 4
   - title: Database Storage Growth
     name: Database Storage Growth
-    model: snowflake-usage
+    model: snowflake_usage
     explore: storage_usage
     type: looker_line
     fields:
@@ -935,7 +935,7 @@
     height: 7
   - title: Billable TB by Month
     name: Billable TB by Month
-    model: snowflake-usage
+    model: snowflake_usage
     explore: storage_usage
     type: looker_line
     fields:
@@ -997,7 +997,7 @@
     height: 7
   - title: Query Volume and Runtime
     name: Query Volume and Runtime
-    model: snowflake-usage
+    model: snowflake_usage
     explore: query_history
     type: looker_line
     fields:
