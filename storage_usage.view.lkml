@@ -52,13 +52,13 @@ view: storage_usage {
 
   dimension: storage_tb {
     type: number
-    sql: ${storage_bytes} / power(10,12) ;;
+    sql: ${storage_bytes} / power(1024,4) ;;
   }
 
 
   dimension: failsafe_tb {
     type: number
-    sql: ${failsafe_bytes} / power(10,12) ;;
+    sql: ${failsafe_bytes} / power(1024,4) ;;
   }
 
   dimension: total_tb {
