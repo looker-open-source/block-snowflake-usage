@@ -84,7 +84,7 @@ view: storage_usage {
 
   measure: prior_mtd_billable_tb {
     type: average
-    sql:  ${storage_tb} + ${failsafe_tb};;
+    sql:  ${total_tb};;
     filters: {field: usage_date value: "last month"}
     value_format_name: decimal_4
   }
