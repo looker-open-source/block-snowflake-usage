@@ -81,7 +81,6 @@ view: warehouse_metering_history {
     type: sum
     sql:  ${credits_used} ;;
     filters: {field: start_date value: "this month"}
-    value_format: "$0.000,\" K\""
     drill_fields: [warehouse_name,total_credits_used]
   }
 
