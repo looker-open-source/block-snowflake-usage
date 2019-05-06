@@ -58,7 +58,7 @@
     single_value_title: Rows Loaded Last 7 Days
     comparison_label: Row Errors on Load Last 7 Days
     listen: {}
-    row: 44
+    row: 39
     col: 0
     width: 6
     height: 7
@@ -316,7 +316,7 @@
     show_silhouette: false
     totals_color: "#808080"
     listen: {}
-    row: 29
+    row: 24
     col: 0
     width: 12
     height: 7
@@ -376,150 +376,10 @@
     show_silhouette: false
     totals_color: "#808080"
     listen: {}
-    row: 29
+    row: 24
     col: 12
     width: 12
     height: 7
-  - title: Credits Used (Last 4 Weeks)
-    name: Credits Used (Last 4 Weeks)
-    model: snowflake_usage
-    explore: warehouse_metering_history
-    type: single_value
-    fields: [warehouse_metering_history.current_four_weeks_credits_used, warehouse_metering_history.prior_four_weeks_credits_used]
-    limit: 500
-    query_timezone: UTC
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    single_value_title: ''
-    show_comparison: true
-    comparison_type: change
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    comparison_label: Credits Used (Prior 4 Weeks)
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: true
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    series_types: {}
-    listen: {}
-    row: 0
-    col: 6
-    width: 6
-    height: 4
-  - title: Avg Exec Time (Last 4 Weeks)
-    name: Avg Exec Time (Last 4 Weeks)
-    model: snowflake_usage
-    explore: query_history
-    type: single_value
-    fields: [query_history.current_four_weeks_avg_exec_time, query_history.prior_four_weeks_avg_exec_time]
-    filters:
-      query_history.query_type: SELECT
-      query_history.execution_status: SUCCESS
-    limit: 500
-    column_limit: 50
-    query_timezone: UTC
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    single_value_title: ''
-    value_format: ''
-    show_comparison: true
-    comparison_type: change
-    comparison_reverse_colors: true
-    show_comparison_label: true
-    comparison_label: Avg Exec Time (Prior 4 Weeks)
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: true
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    series_types: {}
-    listen: {}
-    row: 4
-    col: 0
-    width: 6
-    height: 4
-  - title: Untitled3
-    name: Untitled3
-    model: snowflake_usage
-    explore: storage_usage
-    type: single_value
-    fields: [storage_usage.current_four_weeks_billable_tb, storage_usage.prior_four_weeks_billable_tb]
-    limit: 500
-    query_timezone: UTC
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    show_comparison: true
-    comparison_type: change
-    comparison_reverse_colors: true
-    show_comparison_label: true
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: true
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: auto
-    y_axis_scale_mode: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-    totals_color: "#808080"
-    series_types: {}
-    comparison_label: Billable TB (Prior MTD)
-    single_value_title: Billable TB (MTD)
-    listen: {}
-    row: 4
-    col: 6
-    width: 6
-    height: 4
   - title: Total Jobs by Warehouse (Last 4 Weeks)
     name: Total Jobs by Warehouse (Last 4 Weeks)
     model: snowflake_usage
@@ -695,7 +555,7 @@
     comparison_reverse_colors: false
     show_comparison_label: true
     listen: {}
-    row: 36
+    row: 31
     col: 0
     width: 12
     height: 8
@@ -765,7 +625,7 @@
     show_comparison_label: true
     hidden_fields: []
     listen: {}
-    row: 36
+    row: 31
     col: 12
     width: 12
     height: 8
@@ -817,7 +677,7 @@
     show_null_points: true
     interpolation: linear
     listen: {}
-    row: 44
+    row: 39
     col: 6
     width: 6
     height: 7
@@ -865,7 +725,7 @@
     totals_color: "#808080"
     series_types: {}
     listen: {}
-    row: 44
+    row: 39
     col: 12
     width: 12
     height: 7
@@ -921,7 +781,7 @@
       login_history.reported_client_type: Client Type
       login_history.user_name: User Name
     listen: {}
-    row: 51
+    row: 46
     col: 0
     width: 24
     height: 9
@@ -932,13 +792,16 @@
     type: single_value
     fields: [query_history.current_four_weeks_query_count, query_history.prior_four_weeks_query_count]
     limit: 500
+    dynamic_fields: [{table_calculation: difference, label: Difference, expression: "${query_history.current_four_weeks_query_count}\
+          \ - ${query_history.prior_four_weeks_query_count}", value_format: !!null '',
+        value_format_name: decimal_0, _kind_hint: measure, _type_hint: number}]
     query_timezone: UTC
     custom_color_enabled: false
     custom_color: forestgreen
     show_single_value_title: true
     value_format: ''
     show_comparison: true
-    comparison_type: value
+    comparison_type: change
     comparison_reverse_colors: false
     show_comparison_label: true
     comparison_label: Prior Four Weeks
@@ -965,8 +828,161 @@
     show_silhouette: false
     totals_color: "#808080"
     series_types: {}
+    hidden_fields: [query_history.prior_four_weeks_query_count]
+    listen: {}
+    row: 0
+    col: 6
+    width: 6
+    height: 4
+  - title: Credits Used (Last 4 Weeks)
+    name: Credits Used (Last 4 Weeks)
+    model: snowflake_usage
+    explore: warehouse_metering_history
+    type: single_value
+    fields: [warehouse_metering_history.current_four_weeks_credits_used, warehouse_metering_history.prior_four_weeks_credits_used]
+    limit: 500
+    dynamic_fields: [{table_calculation: difference, label: Difference, expression: "${warehouse_metering_history.current_four_weeks_credits_used}\
+          \ - ${warehouse_metering_history.prior_four_weeks_credits_used}", value_format: !!null '',
+        value_format_name: decimal_2, _kind_hint: measure, _type_hint: number}]
+    query_timezone: UTC
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    single_value_title: ''
+    show_comparison: true
+    comparison_type: change
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    comparison_label: Credits Used (Prior 4 Weeks)
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    series_types: {}
+    hidden_fields: [warehouse_metering_history.prior_four_weeks_credits_used]
     listen: {}
     row: 0
     col: 0
+    width: 6
+    height: 4
+  - title: Avg Exec Time (Last 4 Weeks)
+    name: Avg Exec Time (Last 4 Weeks)
+    model: snowflake_usage
+    explore: query_history
+    type: single_value
+    fields: [query_history.current_four_weeks_avg_exec_time, query_history.prior_four_weeks_avg_exec_time]
+    filters:
+      query_history.query_type: SELECT
+      query_history.execution_status: SUCCESS
+    limit: 500
+    column_limit: 50
+    dynamic_fields: [{table_calculation: difference, label: Difference, expression: "${query_history.current_four_weeks_avg_exec_time}\
+          \ - ${query_history.prior_four_weeks_avg_exec_time}", value_format: !!null '',
+        value_format_name: decimal_2, _kind_hint: measure, _type_hint: number}]
+    query_timezone: UTC
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    single_value_title: ''
+    value_format: ''
+    show_comparison: true
+    comparison_type: change
+    comparison_reverse_colors: true
+    show_comparison_label: true
+    comparison_label: Avg Exec Time (Prior 4 Weeks)
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    series_types: {}
+    hidden_fields: [query_history.prior_four_weeks_avg_exec_time]
+    listen: {}
+    row: 4
+    col: 0
+    width: 6
+    height: 4
+  - title: Billable TB (Last 4 Weeks)
+    name: Billable TB (Last 4 Weeks)
+    model: snowflake_usage
+    explore: storage_usage
+    type: single_value
+    fields: [storage_usage.current_four_weeks_billable_tb, storage_usage.prior_four_weeks_billable_tb]
+    limit: 500
+    dynamic_fields: [{table_calculation: difference, label: Difference, expression: "${storage_usage.current_four_weeks_billable_tb}\
+          \ - ${storage_usage.prior_four_weeks_billable_tb}", value_format: !!null '',
+        value_format_name: decimal_4, _kind_hint: measure, _type_hint: number}]
+    query_timezone: UTC
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    single_value_title: ''
+    show_comparison: true
+    comparison_type: change
+    comparison_reverse_colors: true
+    show_comparison_label: true
+    comparison_label: Billable TB (Prior 4 Weeks)
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: true
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    series_types: {}
+    hidden_fields: [storage_usage.prior_four_weeks_billable_tb]
+    listen: {}
+    row: 4
+    col: 6
     width: 6
     height: 4
