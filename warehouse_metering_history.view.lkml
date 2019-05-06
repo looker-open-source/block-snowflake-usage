@@ -77,18 +77,18 @@ view: warehouse_metering_history {
     sql: ${credits_used} ;;
   }
 
-  measure: current_mtd_credits_used {
+  measure: current_four_weeks_credits_used {
     type: sum
     sql:  ${credits_used} ;;
-    filters: {field: start_date value: "this month"}
+    filters: {field: start_date value: "last 4 weeks"}
     drill_fields: [warehouse_name,total_credits_used]
   }
 
-  measure: prior_mtd_credits_used {
+  measure: prior_four_weeks_credits_used {
     type: sum
     sql:  ${credits_used} ;;
-    filters: {field: is_prior_month_mtd value: "yes"}
-
+    filters: {field: start_date value: "8 weeks ago for 4 weeks"}
+    drill_fields: [warehouse_name,total_credits_used]
   }
 
 }

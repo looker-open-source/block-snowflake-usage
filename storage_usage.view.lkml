@@ -75,17 +75,17 @@ view: storage_usage {
     sql: ${total_tb};;
   }
 
-  measure: curr_mtd_billable_tb {
+  measure: current_four_weeks_billable_tb {
     type: average
     sql:  ${total_tb};;
-    filters: {field: usage_date value: "this month"}
+    filters: {field: usage_date value: "last 4 weeks"}
     value_format_name: decimal_4
   }
 
-  measure: prior_mtd_billable_tb {
+  measure: prior_four_weeks_billable_tb {
     type: average
     sql:  ${total_tb};;
-    filters: {field: usage_date value: "last month"}
+    filters: {field: usage_date value: "8 weeks ago for 4 weeks"}
     value_format_name: decimal_4
   }
 }

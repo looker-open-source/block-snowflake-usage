@@ -176,18 +176,16 @@ view: query_history {
     alias: [job_count]
   }
 
-  measure: current_mtd_query_count {
+  measure: current_four_weeks_query_count {
     type: count
-    filters: {field: start_date value: "this month"}
-    alias: [current_mtd_job_count, current_month_job_count]
-    drill_fields: [user_name,warehouse_name,database_name,current_mtd_query_count]
+    filters: {field: start_date value: "last 4 weeks"}
+    drill_fields: [user_name,warehouse_name,database_name,query_count]
   }
 
-  measure: prior_month_total_query_count {
+  measure: prior_four_weeks_query_count {
     type: count
-    filters: {field: start_date value: "last month"}
-    value_format_name: decimal_0
-    alias: [prior_month_total_job_count]
+    filters: {field: start_date value: "8 weeks ago for 4 weeks"}
+    drill_fields: [user_name,warehouse_name,database_name,query_count]
   }
 
   measure: prior_mtd_query_count {
@@ -252,20 +250,20 @@ view: query_history {
     value_format_name: decimal_2
   }
 
-  measure: current_mtd_avg_exec_time {
+  measure: current_four_weeks_avg_exec_time {
     type: average
     sql: ${execution_time} ;;
     group_label: "Runtime Metrics"
-    filters: {field: start_date value: "this month"}
+    filters: {field: start_date value: "last 4 weeks"}
     value_format_name: decimal_2
-    drill_fields: [user_name,warehouse_name,database_name,current_mtd_avg_exec_time]
+    drill_fields: [user_name,warehouse_name,database_name,average_execution_time]
   }
 
-  measure: prior_mtd_avg_exec_time {
+  measure: prior_four_weeks_avg_exec_time {
     type:  average
     sql:  ${execution_time} ;;
     group_label: "Runtime Metrics"
-    filters: {field: is_prior_month_mtd value: "yes"}
+    filters: {field: start_date value: "8 weeks ago for 4 weeks"}
     value_format_name: decimal_2
   }
 
