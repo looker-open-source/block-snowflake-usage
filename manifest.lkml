@@ -1,5 +1,5 @@
-project_name: "block-snowflake_usage"
+project_name: "block-snowflake-usage"
 
 constant: CONNECTION_NAME {
-  value: "block-snowflake_usage"
+  value: "block-snowflake-usage"
 }
