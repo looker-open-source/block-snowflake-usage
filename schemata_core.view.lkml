@@ -1,4 +1,4 @@
-view: schemata {
+view: schemata_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.SCHEMATA ;;
 
 #   dimension: id {

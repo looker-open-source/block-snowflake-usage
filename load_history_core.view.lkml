@@ -1,4 +1,4 @@
-view: load_history {
+view: load_history_core {
  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.LOAD_HISTORY;;
   dimension: table_id {
     type: number

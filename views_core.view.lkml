@@ -1,29 +1,14 @@
-view: table_constraints {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.TABLE_CONSTRAINTS ;;
+view: views_core {
+  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.VIEWS ;;
+
+  dimension: check_option {
+    type: string
+    sql: ${TABLE}.CHECK_OPTION ;;
+  }
 
   dimension: comment {
     type: string
     sql: ${TABLE}.COMMENT ;;
-  }
-
-  dimension: constraint_catalog {
-    type: string
-    sql: ${TABLE}.CONSTRAINT_CATALOG ;;
-  }
-
-  dimension: constraint_name {
-    type: string
-    sql: ${TABLE}.CONSTRAINT_NAME ;;
-  }
-
-  dimension: constraint_schema {
-    type: string
-    sql: ${TABLE}.CONSTRAINT_SCHEMA ;;
-  }
-
-  dimension: constraint_type {
-    type: string
-    sql: ${TABLE}.CONSTRAINT_TYPE ;;
   }
 
   dimension_group: created {
@@ -54,19 +39,19 @@ view: table_constraints {
     sql: ${TABLE}.DELETED ;;
   }
 
-  dimension: enforced {
+  dimension: insertable_into {
     type: yesno
-    sql: ${TABLE}.ENFORCED ;;
+    sql: CASE WHEN ${TABLE}.INSERTABLE_INTO = 'YES' THEN TRUE ELSE FALSE END ;;
   }
 
-  dimension: initially_deferred {
+  dimension: is_secure {
     type: yesno
-    sql: CASE WHEN ${TABLE}.INITIALLY_DEFERRED = 'YES' THEN TRUE ELSE FALSE END ;;
+    sql: CASE WHEN ${TABLE}.IS_SECURE = 'YES' THEN TRUE ELSE FALSE END ;;
   }
 
-  dimension: is_deferrable {
+  dimension: is_updatable {
     type: yesno
-    sql: CASE WHEN ${TABLE}.IS_DEFERRABLE = 'YES' THEN TRUE ELSE FALSE END ;;
+    sql: CASE WHEN ${TABLE}.IS_UPDATABLE = 'YES' THEN TRUE ELSE FALSE END ;;
   }
 
   dimension_group: last_altered {
@@ -93,13 +78,23 @@ view: table_constraints {
     sql: ${TABLE}.TABLE_NAME ;;
   }
 
+  dimension: table_owner {
+    type: string
+    sql: ${TABLE}.TABLE_OWNER ;;
+  }
+
   dimension: table_schema {
     type: string
     sql: ${TABLE}.TABLE_SCHEMA ;;
   }
 
+  dimension: view_definition {
+    type: string
+    sql: ${TABLE}.VIEW_DEFINITION ;;
+  }
+
   measure: count {
     type: count
-    drill_fields: [constraint_name, table_name]
+    drill_fields: [table_name]
   }
 }

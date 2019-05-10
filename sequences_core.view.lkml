@@ -1,4 +1,4 @@
-view: sequences {
+view: sequences_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.SEQUENCES ;;
 
   dimension: comment {

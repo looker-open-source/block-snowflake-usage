@@ -1,4 +1,4 @@
-view: storage_usage {
+view: storage_usage_core {
   sql_table_name:
   {% if database_name._in_query or database_id._in_query %}
   SNOWFLAKE.ACCOUNT_USAGE.DATABASE_STORAGE_USAGE_HISTORY

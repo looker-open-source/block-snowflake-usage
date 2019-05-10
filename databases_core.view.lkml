@@ -1,5 +1,11 @@
-view: stages {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.STAGES ;;
+view: databases_core {
+  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.DATABASES ;;
+
+  dimension: id {
+    primary_key: yes
+    type: number
+    sql: ${TABLE}.DATABASE_ID ;;
+  }
 
   dimension: comment {
     type: string
@@ -20,6 +26,16 @@ view: stages {
     sql: ${TABLE}.CREATED ;;
   }
 
+  dimension: database_name {
+    type: string
+    sql: ${TABLE}.DATABASE_NAME ;;
+  }
+
+  dimension: database_owner {
+    type: string
+    sql: ${TABLE}.DATABASE_OWNER ;;
+  }
+
   dimension_group: deleted {
     type: time
     timeframes: [
@@ -32,6 +48,11 @@ view: stages {
       year
     ]
     sql: ${TABLE}.DELETED ;;
+  }
+
+  dimension: is_transient {
+    type: yesno
+    sql: ${TABLE}.IS_TRANSIENT ;;
   }
 
   dimension_group: last_altered {
@@ -48,43 +69,8 @@ view: stages {
     sql: ${TABLE}.LAST_ALTERED ;;
   }
 
-  dimension: stage_catalog {
-    type: string
-    sql: ${TABLE}.STAGE_CATALOG ;;
-  }
-
-  dimension: stage_name {
-    type: string
-    sql: ${TABLE}.STAGE_NAME ;;
-  }
-
-  dimension: stage_owner {
-    type: string
-    sql: ${TABLE}.STAGE_OWNER ;;
-  }
-
-  dimension: stage_region {
-    type: string
-    sql: ${TABLE}.STAGE_REGION ;;
-  }
-
-  dimension: stage_schema {
-    type: string
-    sql: ${TABLE}.STAGE_SCHEMA ;;
-  }
-
-  dimension: stage_type {
-    type: string
-    sql: ${TABLE}.STAGE_TYPE ;;
-  }
-
-  dimension: stage_url {
-    type: string
-    sql: ${TABLE}.STAGE_URL ;;
-  }
-
   measure: count {
     type: count
-    drill_fields: [stage_name]
+    drill_fields: [id, database_name, query_history.count, schemata.count]
   }
 }

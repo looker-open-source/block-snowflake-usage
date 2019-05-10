@@ -1,4 +1,4 @@
-view: login_history {
+view: login_history_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.LOGIN_HISTORY ;;
 
   dimension: client_ip {

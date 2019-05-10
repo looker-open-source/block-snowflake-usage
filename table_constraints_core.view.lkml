@@ -1,14 +1,29 @@
-view: views {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.VIEWS ;;
-
-  dimension: check_option {
-    type: string
-    sql: ${TABLE}.CHECK_OPTION ;;
-  }
+view: table_constraints_core {
+  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.TABLE_CONSTRAINTS ;;
 
   dimension: comment {
     type: string
     sql: ${TABLE}.COMMENT ;;
+  }
+
+  dimension: constraint_catalog {
+    type: string
+    sql: ${TABLE}.CONSTRAINT_CATALOG ;;
+  }
+
+  dimension: constraint_name {
+    type: string
+    sql: ${TABLE}.CONSTRAINT_NAME ;;
+  }
+
+  dimension: constraint_schema {
+    type: string
+    sql: ${TABLE}.CONSTRAINT_SCHEMA ;;
+  }
+
+  dimension: constraint_type {
+    type: string
+    sql: ${TABLE}.CONSTRAINT_TYPE ;;
   }
 
   dimension_group: created {
@@ -39,19 +54,19 @@ view: views {
     sql: ${TABLE}.DELETED ;;
   }
 
-  dimension: insertable_into {
+  dimension: enforced {
     type: yesno
-    sql: CASE WHEN ${TABLE}.INSERTABLE_INTO = 'YES' THEN TRUE ELSE FALSE END ;;
+    sql: ${TABLE}.ENFORCED ;;
   }
 
-  dimension: is_secure {
+  dimension: initially_deferred {
     type: yesno
-    sql: CASE WHEN ${TABLE}.IS_SECURE = 'YES' THEN TRUE ELSE FALSE END ;;
+    sql: CASE WHEN ${TABLE}.INITIALLY_DEFERRED = 'YES' THEN TRUE ELSE FALSE END ;;
   }
 
-  dimension: is_updatable {
+  dimension: is_deferrable {
     type: yesno
-    sql: CASE WHEN ${TABLE}.IS_UPDATABLE = 'YES' THEN TRUE ELSE FALSE END ;;
+    sql: CASE WHEN ${TABLE}.IS_DEFERRABLE = 'YES' THEN TRUE ELSE FALSE END ;;
   }
 
   dimension_group: last_altered {
@@ -78,23 +93,13 @@ view: views {
     sql: ${TABLE}.TABLE_NAME ;;
   }
 
-  dimension: table_owner {
-    type: string
-    sql: ${TABLE}.TABLE_OWNER ;;
-  }
-
   dimension: table_schema {
     type: string
     sql: ${TABLE}.TABLE_SCHEMA ;;
   }
 
-  dimension: view_definition {
-    type: string
-    sql: ${TABLE}.VIEW_DEFINITION ;;
-  }
-
   measure: count {
     type: count
-    drill_fields: [table_name]
+    drill_fields: [constraint_name, table_name]
   }
 }

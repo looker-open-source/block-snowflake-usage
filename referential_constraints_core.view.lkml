@@ -1,4 +1,4 @@
-view: referential_constraints {
+view: referential_constraints_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.REFERENTIAL_CONSTRAINTS ;;
 
   dimension: comment {

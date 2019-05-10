@@ -1,4 +1,4 @@
-view: tables {
+view: tables_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.TABLES ;;
 
   dimension: id {

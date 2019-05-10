@@ -1,4 +1,4 @@
-view: functions {
+view: functions_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.FUNCTIONS ;;
 
   dimension: argument_signature {
