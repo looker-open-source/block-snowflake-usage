@@ -1,6 +1,11 @@
 view: warehouse_metering_history_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY ;;
 
+  dimension: pk {
+    primary_key: yes
+    sql: CONCAT(${warehouse_name},${start_time}) ;;
+  }
+
   dimension: credits_used {
     type: number
     sql: ${TABLE}.CREDITS_USED ;;
