@@ -116,9 +116,49 @@ view: query_history_core {
     sql: ${TABLE}.QUERY_TEXT ;;
   }
 
-  dimension: query_type {
+  dimension: query_type_detail {
     type: string
     sql: ${TABLE}.QUERY_TYPE ;;
+  }
+
+  dimension: query_type {
+    type: string
+    case: {
+      when: {
+        label: "SELECT Query"
+        sql: ${query_type_detail} ILIKE 'SELECT%'
+          ;;
+      }
+      when: {
+        label: "CTE SELECT Query"
+        sql: ${query_type_detail} ILIKE 'WITH%'
+          ;;
+      }
+      when: {
+        label: "DDL Statement"
+        sql: ${query_type_detail} ILIKE 'ALTER%'
+          OR ${query_type_detail} ILIKE 'COMMENT%'
+          OR ${query_type_detail} ILIKE 'CREATE%'
+          OR ${query_type_detail} ILIKE 'DESCRIBE%'
+          OR ${query_type_detail} ILIKE 'DROP%'
+          OR ${query_type_detail} ILIKE 'GRANT%'
+          OR ${query_type_detail} ILIKE 'SHOW%'
+          OR ${query_type_detail} ILIKE 'UNDROP%'
+          OR ${query_type_detail} ILIKE 'USE%'
+          ;;
+      }
+      when: {
+        label: "DML Statement"
+        sql: ${query_type_detail} ILIKE 'DELETE%'
+          OR ${query_type_detail} ILIKE 'INSERT%'
+          OR ${query_type_detail} ILIKE 'MERGE%'
+          OR ${query_type_detail} ILIKE 'REPLACE%'
+          OR ${query_type_detail} ILIKE 'TRUNCATE TABLE%'
+          OR ${query_type_detail} ILIKE 'UPDATE%'
+          ;;
+      }
+      else: "Other"
+    }
   }
 
   dimension: queued_overload_time {
