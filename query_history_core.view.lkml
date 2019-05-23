@@ -17,8 +17,9 @@ view: query_history_core {
   }
 
   dimension: compilation_time {
+    description: "Compilation time of the query (in seconds)"
     type: string
-    sql: ${TABLE}.COMPILATION_TIME ;;
+    sql: ${TABLE}.COMPILATION_TIME/1000 ;;
   }
 
   dimension: looker_query_context {
@@ -77,8 +78,9 @@ view: query_history_core {
   }
 
   dimension: execution_time {
+    description: "Execution time of the query (in seconds)"
     type: number
-    sql: ${TABLE}.EXECUTION_TIME ;;
+    sql: ${TABLE}.EXECUTION_TIME/1000 ;;
   }
 
 #   dimension: job_tag {
@@ -108,18 +110,21 @@ view: query_history_core {
   }
 
   dimension: queued_overload_time {
+    description: "Time (in seconds) spent in the warehouse queue, due to the warehouse being overloaded by the current query workload"
     type: string
-    sql: ${TABLE}.QUEUED_OVERLOAD_TIME ;;
+    sql: ${TABLE}.QUEUED_OVERLOAD_TIME/1000 ;;
   }
 
   dimension: queued_provisioning_time {
+    description: "Time (in seconds) spent in the warehouse queue, waiting for the warehouse servers to provision, due to warehouse creation, resume, or resize"
     type: string
-    sql: ${TABLE}.QUEUED_PROVISIONING_TIME ;;
+    sql: ${TABLE}.QUEUED_PROVISIONING_TIME/1000 ;;
   }
 
   dimension: queued_repair_time {
+    description: "Time (in seconds) spent in the warehouse queue, waiting for servers in the warehouse to be repaired"
     type: string
-    sql: ${TABLE}.QUEUED_REPAIR_TIME ;;
+    sql: ${TABLE}.QUEUED_REPAIR_TIME/1000 ;;
   }
 
   dimension: role_name {
@@ -150,13 +155,15 @@ view: query_history_core {
   }
 
   dimension: elapsed_time {
+    description: "Elapsed time of the query (in seconds)"
     type: number
-    sql: ${TABLE}.TOTAL_ELAPSED_TIME ;;
+    sql: ${TABLE}.TOTAL_ELAPSED_TIME/1000 ;;
   }
 
   dimension: transaction_blocked_time {
+    description: "Time (in seconds) spent blocked by a concurrent DML"
     type: string
-    sql: ${TABLE}.TRANSACTION_BLOCKED_TIME ;;
+    sql: ${TABLE}.TRANSACTION_BLOCKED_TIME/1000 ;;
   }
 
   dimension: user_name {
