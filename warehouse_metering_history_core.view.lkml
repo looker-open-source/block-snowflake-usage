@@ -3,7 +3,7 @@ view: warehouse_metering_history_core {
 
   dimension: pk {
     primary_key: yes
-    sql: CONCAT(${warehouse_name},${start_time}) ;;
+    sql: CONCAT(${warehouse_name},${start_raw}) ;;
   }
 
   dimension: credits_used {

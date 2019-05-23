@@ -102,7 +102,7 @@ view: query_history_core {
     sql: ${TABLE}.QUERY_ID ;;
     link: {
       label: "Query Inspection for this ID"
-      url: "/dashboards/396?Query ID={{ filterable_value }}"
+      url: "/dashboards/396?Query ID={{ filterable_value }}" ## May need to be changed to LookML dashboard Reference
     }
   }
 
@@ -236,6 +236,13 @@ view: query_history_core {
     value_format_name: decimal_2
   }
 
+  measure: average_overall_queued_time {
+    type: average
+    group_label: "Runtime Metrics"
+    sql: ${queued_repair_time}+${queued_provisioning_time}+${queued_overload_time} ;;
+    value_format_name: decimal_2
+  }
+
   measure: total_execution_time {
     type: sum
     group_label: "Runtime Metrics"
@@ -261,6 +268,13 @@ view: query_history_core {
     type: sum
     group_label: "Runtime Metrics"
     sql: ${queued_repair_time} ;;
+    value_format_name: decimal_2
+  }
+
+  measure: total_overall_queued_time {
+    type: sum
+    group_label: "Runtime Metrics"
+    sql: ${queued_repair_time}+${queued_provisioning_time}+${queued_overload_time} ;;
     value_format_name: decimal_2
   }
 
