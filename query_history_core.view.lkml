@@ -243,6 +243,27 @@ view: query_history_core {
     value_format_name: decimal_2
   }
 
+  measure: average_compilation_time {
+    type: average
+    group_label: "Runtime Metrics"
+    sql: ${compilation_time} ;;
+    value_format_name: decimal_2
+  }
+
+  measure: average_elapsed_time {
+    type: average
+    group_label: "Runtime Metrics"
+    sql: ${elapsed_time} ;;
+    value_format_name: decimal_2
+  }
+
+  measure: average_queued_overload_time {
+    type: average
+    group_label: "Runtime Metrics"
+    sql: ${queued_overload_time} ;;
+    value_format_name: decimal_2
+  }
+
   measure: total_execution_time {
     type: sum
     group_label: "Runtime Metrics"
