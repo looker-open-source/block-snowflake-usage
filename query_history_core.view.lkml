@@ -31,11 +31,19 @@ view: query_history_core {
   dimension: looker_history_id {
     type: number
     sql: ${looker_query_context}:history_id ;;
+    link: {
+      label: "See History ID in i__looker"
+      url: "/explore/i__looker/history?fields=query.model,query.view,history.query_run_count,user.count,history.runtime_tiers&pivots=history.runtime_tiers&f[query.model]=-EMPTY&f[history.runtime]=NOT NULL&f[user.name]=&f[history.created_date]=10 weeks&f[history.id]={{ value }}&sorts=query.model,query.view,history.runtime_tiers&limit=10&column_limit=50"
+    }
   }
 
   dimension: looker_user_id {
     type: number
     sql: ${looker_query_context}:user_id ;;
+    link: {
+      label: "See User in Looker Admin Panel"
+      url: "/admin/users?id={{ value }}"
+    }
   }
 #   dimension: database_id {
 #     type: number
@@ -92,6 +100,10 @@ view: query_history_core {
     type: string
     primary_key: yes
     sql: ${TABLE}.QUERY_ID ;;
+    link: {
+      label: "Query Inspection for this ID"
+      url: "/dashboards/396?Query ID={{ filterable_value }}"
+    }
   }
 
   dimension: query_tag {
