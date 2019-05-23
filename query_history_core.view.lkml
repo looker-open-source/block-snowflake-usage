@@ -100,6 +100,10 @@ view: query_history_core {
     type: string
     primary_key: yes
     sql: ${TABLE}.QUERY_ID ;;
+    link: {
+      label: "Query Inspection for this ID"
+      url: "/dashboards/396?Query ID={{ filterable_value }}"
+    }
   }
 
   dimension: query_tag {
