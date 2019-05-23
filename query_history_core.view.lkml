@@ -1,6 +1,21 @@
 view: query_history_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY ;;
 
+  filter: query_text_filter {
+    type: string
+  }
+
+  dimension: query_text_selector {
+    type: string
+    case: {
+      when: {
+        sql: {% condition query_text_filter %} ${query_text} {% endcondition %} ;;
+        label: "Queries with Specified Pattern"
+      }
+      else: "All Other Queries"
+    }
+  }
+
   dimension: compilation_time {
     type: string
     sql: ${TABLE}.COMPILATION_TIME ;;
