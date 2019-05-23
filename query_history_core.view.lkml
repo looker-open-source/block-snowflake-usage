@@ -36,6 +36,10 @@ view: query_history_core {
   dimension: looker_user_id {
     type: number
     sql: ${looker_query_context}:user_id ;;
+    link: {
+      label: "See User in Looker Admin Panel"
+      url: "/admin/users?id={{ value }}"
+    }
   }
 #   dimension: database_id {
 #     type: number
