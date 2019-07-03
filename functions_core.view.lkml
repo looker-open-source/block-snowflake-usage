@@ -1,6 +1,8 @@
 view: functions_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.FUNCTIONS ;;
 
+  # DIMENSIONS #
+
   dimension: argument_signature {
     type: string
     sql: ${TABLE}.ARGUMENT_SIGNATURE ;;
@@ -122,6 +124,8 @@ view: functions_core {
     type: string
     sql: ${TABLE}.VOLATILITY ;;
   }
+
+  # MEASURES #
 
   measure: count {
     type: count

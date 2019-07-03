@@ -1,9 +1,13 @@
 view: query_history_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY ;;
 
+  # FILTERS #
+
   filter: query_text_filter {
     type: string
   }
+
+  # DIMENSIONS #
 
   dimension: query_text_selector {
     type: string
@@ -244,6 +248,8 @@ view: query_history_core {
             and ${start_raw} <= dateadd(month, -1, current_timestamp())  ;;
   }
 
+  # MEASURES #
+
   measure: query_count {
     type: count
     drill_fields: [detail*]
@@ -376,7 +382,8 @@ view: query_history_core {
     value_format_name: decimal_2
   }
 
-  # ----- Sets of fields for drilling ------
+  # SETS #
+
   set: detail {
     fields: [
       #id,

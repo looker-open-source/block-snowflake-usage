@@ -1,6 +1,8 @@
 view: login_history_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.LOGIN_HISTORY ;;
 
+  # DIMENSIONS #
+
   dimension: client_ip {
     type: string
     sql: ${TABLE}.CLIENT_IP ;;
@@ -86,6 +88,8 @@ view: login_history_core {
 #     sql: timediff(seconds, ${event_raw}, lead(${event_raw}) over(partition by ${user_name} order by ${event_raw})) ;;
 #
 #   }
+
+  # MEASURES #
 
   measure: logins {
     type: count

@@ -1,6 +1,8 @@
 view: table_constraints_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.TABLE_CONSTRAINTS ;;
 
+  # DIMENSIONS #
+
   dimension: comment {
     type: string
     sql: ${TABLE}.COMMENT ;;
@@ -97,6 +99,8 @@ view: table_constraints_core {
     type: string
     sql: ${TABLE}.TABLE_SCHEMA ;;
   }
+
+  # MEASURES #
 
   measure: count {
     type: count

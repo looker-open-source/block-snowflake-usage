@@ -1,6 +1,8 @@
 view: stages_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.STAGES ;;
 
+  # DIMENSIONS #
+
   dimension: comment {
     type: string
     sql: ${TABLE}.COMMENT ;;
@@ -82,6 +84,8 @@ view: stages_core {
     type: string
     sql: ${TABLE}.STAGE_URL ;;
   }
+
+  # MEASURES #
 
   measure: count {
     type: count

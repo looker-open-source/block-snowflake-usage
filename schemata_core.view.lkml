@@ -7,6 +7,8 @@ view: schemata_core {
 #     sql: ${TABLE}.ID ;;
 #   }
 
+  # DIMENSIONS #
+
   dimension: comment {
     type: string
     sql: ${TABLE}.COMMENT ;;
@@ -100,12 +102,15 @@ view: schemata_core {
     sql: ${TABLE}.SQL_PATH ;;
   }
 
+  # MEASURES #
+
   measure: count {
     type: count
     drill_fields: [detail*]
   }
 
-  # ----- Sets of fields for drilling ------
+  # SETS #
+
   set: detail {
     fields: [
       #id,

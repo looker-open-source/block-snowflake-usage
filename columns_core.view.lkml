@@ -1,6 +1,8 @@
 view: columns_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.COLUMNS ;;
 
+  # DIMENSIONS #
+
   dimension: id {
     primary_key: yes
     type: number
@@ -264,12 +266,15 @@ view: columns_core {
     sql: ${TABLE}.UDT_SCHEMA ;;
   }
 
+  # MEASURES #
+
   measure: count {
     type: count
     drill_fields: [detail*]
   }
 
-  # ----- Sets of fields for drilling ------
+  # SETS #
+
   set: detail {
     fields: [
       id,

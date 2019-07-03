@@ -1,5 +1,8 @@
 view: load_history_core {
  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.LOAD_HISTORY;;
+
+  # DIMENSIONS #
+
   dimension: table_id {
     type: number
     sql: ${TABLE}.TABLE_ID ;;
@@ -87,6 +90,8 @@ view: load_history_core {
     sql: ${TABLE}.ERROR_LIMIT ;;
   }
 
+  # MEASURES #
+
   measure: total_row_count {
     type: sum
     sql: ${row_count} ;;
@@ -103,6 +108,7 @@ view: load_history_core {
     drill_fields: [detail*]
   }
 
+  # SETS #
 
   set: detail {
     fields: [

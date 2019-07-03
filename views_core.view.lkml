@@ -1,6 +1,8 @@
 view: views_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.VIEWS ;;
 
+  # DIMENSIONS #
+
   dimension: check_option {
     type: string
     sql: ${TABLE}.CHECK_OPTION ;;
@@ -92,6 +94,8 @@ view: views_core {
     type: string
     sql: ${TABLE}.VIEW_DEFINITION ;;
   }
+
+  # MEASURES #
 
   measure: count {
     type: count

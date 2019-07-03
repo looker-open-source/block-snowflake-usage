@@ -6,6 +6,8 @@ view: storage_usage_core {
   SNOWFLAKE.ACCOUNT_USAGE.STORAGE_USAGE
   {% endif %};;
 
+  # DIMENSIONS #
+
   dimension: database_id {
     type: number
     sql: ${TABLE}.DATABASE_ID ;;
@@ -64,6 +66,8 @@ view: storage_usage_core {
   dimension: total_tb {
     sql: ${storage_tb} + ${failsafe_tb};;
   }
+
+  # MEASURES #
 
   measure: count {
     type: count

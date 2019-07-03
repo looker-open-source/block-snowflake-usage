@@ -1,6 +1,8 @@
 view: referential_constraints_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.REFERENTIAL_CONSTRAINTS ;;
 
+  # DIMENSIONS #
+
   dimension: comment {
     type: string
     sql: ${TABLE}.COMMENT ;;
@@ -102,6 +104,8 @@ view: referential_constraints_core {
     type: string
     sql: ${TABLE}.UPDATE_RULE ;;
   }
+
+  # MEASURES #
 
   measure: count {
     type: count

@@ -1,6 +1,8 @@
 view: databases_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.DATABASES ;;
 
+  # DIMENSIONS #
+
   dimension: id {
     primary_key: yes
     type: number
@@ -68,6 +70,8 @@ view: databases_core {
     ]
     sql: ${TABLE}.LAST_ALTERED ;;
   }
+
+  # MEASURES #
 
   measure: count {
     type: count

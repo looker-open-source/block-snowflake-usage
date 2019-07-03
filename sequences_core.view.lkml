@@ -1,6 +1,8 @@
 view: sequences_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.SEQUENCES ;;
 
+  # DIMENSIONS #
+
   dimension: comment {
     type: string
     sql: ${TABLE}.COMMENT ;;
@@ -117,6 +119,8 @@ view: sequences_core {
     type: number
     sql: ${TABLE}.START_VALUE ;;
   }
+
+  # MEASURES #
 
   measure: count {
     type: count

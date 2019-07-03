@@ -1,6 +1,8 @@
 view: table_storage_metrics_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.TABLE_STORAGE_METRICS ;;
 
+  # DIMENSIONS #
+
 #   dimension: id {
 #     primary_key: yes
 #     type: number
@@ -160,6 +162,8 @@ view: table_storage_metrics_core {
     type: number
     sql: ${TABLE}.TIME_TRAVEL_BYTES ;;
   }
+
+  # MEASURES #
 
   measure: count {
     type: count

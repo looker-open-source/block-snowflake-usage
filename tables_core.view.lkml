@@ -1,6 +1,8 @@
 view: tables_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.TABLES ;;
 
+  # DIMENSIONS #
+
   dimension: id {
     primary_key: yes
     type: number
@@ -138,6 +140,8 @@ view: tables_core {
     type: string
     sql: ${TABLE}.USER_DEFINED_SCHEMA_TYPE ;;
   }
+
+  # MEASURES #
 
   measure: count {
     type: count

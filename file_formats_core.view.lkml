@@ -1,6 +1,8 @@
 view: file_formats_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.FILE_FORMATS ;;
 
+  # DIMENSIONS #
+
   dimension: binary_format {
     type: string
     sql: ${TABLE}.BINARY_FORMAT ;;
@@ -142,6 +144,8 @@ view: file_formats_core {
     type: string
     sql: ${TABLE}.TRIM_SPACE ;;
   }
+
+  # MEASURES #
 
   measure: count {
     type: count
