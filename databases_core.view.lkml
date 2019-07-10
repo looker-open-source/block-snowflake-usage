@@ -1,5 +1,5 @@
 view: databases_core {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.DATABASES ;;
+  sql_table_name: SNOWFLAKE_GENERATED.ACCOUNT_USAGE.DATABASES ;;
 
   # DIMENSIONS #
 

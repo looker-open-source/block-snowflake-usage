@@ -1,5 +1,5 @@
 view: warehouse_metering_history_core {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY ;;
+  sql_table_name: SNOWFLAKE_GENERATED.ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY ;;
 
   # DIMENSIONS #
 

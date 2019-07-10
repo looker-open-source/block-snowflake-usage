@@ -1,5 +1,5 @@
 view: file_formats_core {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.FILE_FORMATS ;;
+  sql_table_name: SNOWFLAKE_GENERATED.ACCOUNT_USAGE.FILE_FORMATS ;;
 
   # DIMENSIONS #
 

@@ -1,5 +1,5 @@
 view: sequences_core {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.SEQUENCES ;;
+  sql_table_name: SNOWFLAKE_GENERATED.ACCOUNT_USAGE.SEQUENCES ;;
 
   # DIMENSIONS #
 

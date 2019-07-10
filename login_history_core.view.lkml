@@ -1,5 +1,5 @@
 view: login_history_core {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.LOGIN_HISTORY ;;
+  sql_table_name: SNOWFLAKE_GENERATED.ACCOUNT_USAGE.LOGIN_HISTORY ;;
 
   # DIMENSIONS #
 

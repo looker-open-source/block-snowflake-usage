@@ -1,5 +1,5 @@
 view: functions_core {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.FUNCTIONS ;;
+  sql_table_name: SNOWFLAKE_GENERATED.ACCOUNT_USAGE.FUNCTIONS ;;
 
   # DIMENSIONS #
 

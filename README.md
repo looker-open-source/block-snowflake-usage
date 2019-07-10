@@ -42,8 +42,8 @@ As an example, The commands below would be used if the user in your looker conne
 
 ```
 grant usage on database SNOWFLAKE to role looker_role;
-grant usage on schema SNOWFLAKE.ACCOUNT_USAGE to role looker_role;
-grant select on all tables in schema SNOWFLAKE.ACCOUNT_USAGE to role looker_role;
+grant usage on schema SNOWFLAKE_GENERATED.ACCOUNT_USAGE to role looker_role;
+grant select on all tables in schema SNOWFLAKE_GENERATED.ACCOUNT_USAGE to role looker_role;
 ```
 
 

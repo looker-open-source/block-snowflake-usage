@@ -1,5 +1,5 @@
 view: query_history_core {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY ;;
+  sql_table_name: SNOWFLAKE_GENERATED.ACCOUNT_USAGE.QUERY_HISTORY ;;
 
   # FILTERS #
 
