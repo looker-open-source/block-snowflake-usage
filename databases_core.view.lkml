@@ -7,11 +7,13 @@ view: databases_core {
     primary_key: yes
     type: number
     sql: ${TABLE}.DATABASE_ID ;;
+    description: "Internal/system-generated identifier for the database"
   }
 
   dimension: comment {
     type: string
     sql: ${TABLE}.COMMENT ;;
+    description: "Comment for the database"
   }
 
   dimension_group: created {
@@ -26,16 +28,19 @@ view: databases_core {
       year
     ]
     sql: ${TABLE}.CREATED ;;
+    description: "Date and time when the database was created"
   }
 
   dimension: database_name {
     type: string
     sql: ${TABLE}.DATABASE_NAME ;;
+    description: "Name of database"
   }
 
   dimension: database_owner {
     type: string
     sql: ${TABLE}.DATABASE_OWNER ;;
+    description: "Name of the role that owns the database"
   }
 
   dimension_group: deleted {
@@ -50,11 +55,13 @@ view: databases_core {
       year
     ]
     sql: ${TABLE}.DELETED ;;
+    description: "Date and time when the database was dropped"
   }
 
   dimension: is_transient {
     type: yesno
     sql: ${TABLE}.IS_TRANSIENT ;;
+    description: "Whether the database is transient"
   }
 
   dimension_group: last_altered {
@@ -69,6 +76,13 @@ view: databases_core {
       year
     ]
     sql: ${TABLE}.LAST_ALTERED ;;
+    description: "Date and time when the database was last altered"
+  }
+
+  dimension: retention_in_days {
+    type: number
+    sql: ${TABLE}.retention_time ;;
+    description: "Number of days that historical data is retained for Time Travel"
   }
 
   # MEASURES #
