@@ -1,6 +1,9 @@
 view: tables_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.TABLES ;;
 
+  # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/tables.html
+
+
   # DIMENSIONS #
 
   dimension: id {

@@ -8,10 +8,17 @@ view: warehouse_metering_history_core {
     sql: CONCAT(${warehouse_name},${start_raw}) ;;
   }
 
+  dimension: reader_account_name {
+    type: string
+    sql: ${TABLE}.READER_ACCOUNT_NAME ;;
+    description: "Name of the reader account where the warehouse usage took place. Column only included in view in READER_ACCOUNT_USAGE schema"
+  }
+
   dimension: credits_used {
     type: number
     sql: ${TABLE}.CREDITS_USED ;;
     alias: [credits]
+    description: "Number of credits billed for the warehouse in the hour"
   }
 
   dimension_group: start {
@@ -32,6 +39,7 @@ view: warehouse_metering_history_core {
     ]
     sql: ${TABLE}.START_TIME ;;
     alias: [read_hour]
+    description: "The date and beginning of the hour (in the UTC time zone) in which the warehouse usage took place"
   }
 
   dimension_group: end {
@@ -51,16 +59,19 @@ view: warehouse_metering_history_core {
       year
     ]
     sql: ${TABLE}.END_TIME ;;
+    description: "The date and end of the hour (in the UTC time zone) in which the warehouse usage took place"
   }
 
-#   dimension: warehouse_id {
-#     type: string
-#     sql: ${TABLE}.WAREHOUSE_ID ;;
-#   }
+  dimension: warehouse_id {
+    type: string
+    sql: ${TABLE}.WAREHOUSE_ID ;;
+    description: "Internal/system-generated identifier for the warehouse"
+  }
 
   dimension: warehouse_name {
     type: string
     sql: ${TABLE}.WAREHOUSE_NAME ;;
+    description: "Name of the warehouse"
   }
 
   dimension: is_prior_month_mtd {
