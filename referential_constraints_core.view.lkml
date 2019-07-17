@@ -1,6 +1,8 @@
 view: referential_constraints_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.REFERENTIAL_CONSTRAINTS ;;
 
+  # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/databases.html
+
   # DIMENSIONS #
 
   dimension: comment {

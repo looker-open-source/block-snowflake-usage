@@ -3,7 +3,6 @@ view: tables_core {
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/tables.html
 
-
   # DIMENSIONS #
 
   dimension: id {

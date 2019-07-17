@@ -1,6 +1,8 @@
 view: query_history_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY ;;
 
+  # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/databases.html
+
   # FILTERS #
 
   filter: query_text_filter {

@@ -1,6 +1,8 @@
 view: login_history_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.LOGIN_HISTORY ;;
 
+  # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/databases.html
+
   # DIMENSIONS #
 
   dimension: client_ip {

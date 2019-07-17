@@ -6,6 +6,8 @@ view: storage_usage_core {
   SNOWFLAKE.ACCOUNT_USAGE.STORAGE_USAGE
   {% endif %};;
 
+  # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/databases.html
+
   # DIMENSIONS #
 
   dimension: database_id {
