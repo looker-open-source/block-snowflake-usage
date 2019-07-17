@@ -6,13 +6,15 @@ view: storage_usage_core {
   SNOWFLAKE.ACCOUNT_USAGE.STORAGE_USAGE
   {% endif %};;
 
-  # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/databases.html
+  # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/database_storage_usage_history.html
+  # https://docs.snowflake.net/manuals/sql-reference/account-usage/storage_usage.html
 
   # DIMENSIONS #
 
   dimension: database_id {
     type: number
     sql: ${TABLE}.DATABASE_ID ;;
+    description: "Internal/system-generated identifier for the database"
   }
 
   dimension_group: deleted {
@@ -20,11 +22,13 @@ view: storage_usage_core {
     type: time
     hidden: yes
     sql: ${TABLE}.DELETED ;;
+    description: "Date and time when the database was dropped; NULL for active databases"
   }
 
   dimension: database_name {
     type: string
     sql: ${TABLE}.DATABASE_NAME ;;
+    description: "Name of the database"
   }
 
   dimension_group: usage {
@@ -34,6 +38,7 @@ view: storage_usage_core {
     convert_tz: no
     sql: ${TABLE}.USAGE_DATE ;;
     alias: [read]
+    description: "Name of the reader account where the data is stored. Column only included in view in READER_ACCOUNT_USAGE schema"
   }
 
   dimension: storage_bytes {
@@ -44,6 +49,7 @@ view: storage_usage_core {
     ${TABLE}.STORAGE_BYTES
     {% endif %}
      ;;
+    description: "Number of bytes of table storage used, including bytes for data currently in Time Travel"
   }
   dimension: failsafe_bytes {
     type: number
@@ -52,6 +58,13 @@ view: storage_usage_core {
     {% else %}
     ${TABLE}.FAILSAFE_BYTES
      {% endif %};;
+    description: "Number of bytes of data in Fail-safe"
+  }
+
+  dimension: stage_bytes {
+    type:  number
+    sql: ${TABLE}.stage_bytes ;;
+    description: "Number of bytes of stage storage used by files in all internal stages (named, table, and user)"
   }
 
   dimension: storage_tb {
