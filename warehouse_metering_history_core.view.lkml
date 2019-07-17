@@ -1,6 +1,8 @@
 view: warehouse_metering_history_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY ;;
 
+  # Field Descriptions from Snowflake Documentation
+
   # DIMENSIONS #
 
   dimension: pk {
@@ -8,11 +10,11 @@ view: warehouse_metering_history_core {
     sql: CONCAT(${warehouse_name},${start_raw}) ;;
   }
 
-  dimension: reader_account_name {
-    type: string
-    sql: ${TABLE}.READER_ACCOUNT_NAME ;;
-    description: "Name of the reader account where the warehouse usage took place. Column only included in view in READER_ACCOUNT_USAGE schema"
-  }
+#   dimension: reader_account_name {
+#     type: string
+#     sql: ${TABLE}.READER_ACCOUNT_NAME ;;
+#     description: "Name of the reader account where the warehouse usage took place. Column only included in view in READER_ACCOUNT_USAGE schema"
+#   }
 
   dimension: credits_used {
     type: number
