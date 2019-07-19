@@ -1,7 +1,7 @@
 view: query_history_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY ;;
 
-  # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/databases.html
+  # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/query_history.html
 
   # FILTERS #
 
@@ -51,15 +51,48 @@ view: query_history_core {
       url: "/admin/users?id={{ value }}"
     }
   }
+
 #   dimension: database_id {
 #     type: number
 #     # hidden: yes
 #     sql: ${TABLE}.DATABASE_ID ;;
+#     description: "Internal/system-generated identifier for the database that was in use"
 #   }
 
   dimension: database_name {
     type: string
     sql: ${TABLE}.DATABASE_NAME ;;
+    description: "Database that was in use at the time of the query"
+  }
+
+  dimension: rows_produced {
+    type: number
+    sql: ${TABLE}.ROWS_PRODUCED ;;
+    description: "Number of rows produced by this statement"
+  }
+
+  dimension: schema_id {
+    type: number
+    sql: ${TABLE}.SCHEMA_ID ;;
+    description: "Internal/system-generated identifier for the schema that was in use"
+  }
+
+  dimension: schema_name {
+    type: string
+    sql: ${TABLE}.SCHEMA_NAME ;;
+    description: "Schema that was in use at the time of the query"
+  }
+
+  dimension: bytes_scanned {
+    type: number
+    sql: ${TABLE}.BYTES_SCANNED ;;
+    description: "Number of bytes scanned by this statement"
+  }
+
+  dimension: cluster_number {
+    type: number
+    sql: ${TABLE}.CLUSTER_NUMBER ;;
+    description: "The cluster (in a multi-cluster warehouse) that this statement executed on"
   }
 
   dimension_group: end {
@@ -74,21 +107,25 @@ view: query_history_core {
       year
     ]
     sql: ${TABLE}.END_TIME ;;
+    description: "Statement end time (in the UTC time zone), or NULL if the statement is still running"
   }
 
   dimension: error_code {
     type: string
     sql: ${TABLE}.ERROR_CODE ;;
+    description: "Error code, if the query returned an error"
   }
 
   dimension: error_message {
     type: string
     sql: ${TABLE}.ERROR_MESSAGE ;;
+    description: "Error message, if the query returned an error"
   }
 
   dimension: execution_status {
     type: string
     sql: ${TABLE}.EXECUTION_STATUS ;;
+    description: "Execution status for the query: resuming_warehouse, running, queued, blocked, success, failed_with_error, or failed_with_incident"
   }
 
   dimension: execution_time {
@@ -97,10 +134,41 @@ view: query_history_core {
     sql: ${TABLE}.EXECUTION_TIME/1000 ;;
   }
 
-#   dimension: job_tag {
-#     type: string
-#     sql: ${TABLE}.JOB_TAG ;;
-#   }
+  dimension: outbound_data_transfer_cloud {
+    type: string
+    sql: ${TABLE}.OUTBOUND_DATA_TRANSFER_CLOUD ;;
+    description: "Target cloud provider for statements that unload data to another region and/or cloud"
+  }
+
+  dimension: outbound_data_transfer_region {
+    type: string
+    sql: ${TABLE}.OUTBOUND_DATA_TRANSFER_REGION ;;
+    description: "Target region for statements that unload data to another region and/or cloud"
+  }
+
+  dimension: outbound_data_transfer_bytes {
+    type: number
+    sql: ${TABLE}.OUTBOUND_DATA_TRANSFER_BYTES ;;
+    description: "Number of bytes transferred in statements that unload data to another region and/or cloud"
+  }
+
+  dimension: inbound_data_transfer_cloud {
+    type: string
+    sql: ${TABLE}.INBOUND_DATA_TRANSFER_CLOUD ;;
+    description: "Source cloud provider for statements that load data from another region and/or cloud"
+  }
+
+  dimension: inbound_data_transfer_region {
+    type: string
+    sql: ${TABLE}.INBOUND_DATA_TRANSFER_REGION ;;
+    description: "Source region for statements that load data from another region and/or cloud"
+  }
+
+  dimension: inbound_data_transfer_bytes {
+    type: number
+    sql: ${TABLE}.INBOUND_DATA_TRANSFER_BYTES ;;
+    description: "Number of bytes transferred in statements that unload data to another region and/or cloud"
+  }
 
   dimension: query_id {
     type: string
@@ -110,21 +178,25 @@ view: query_history_core {
       label: "Query Inspection for this ID"
       url: "/dashboards/396?Query ID={{ filterable_value }}" ## May need to be changed to LookML dashboard Reference
     }
+    description: "Internal/system-generated identifier for the SQL statement"
   }
 
   dimension: query_tag {
     type: string
     sql: ${TABLE}.QUERY_TAG ;;
+    description: "Query tag set for this statement through the QUERY_TAG session parameter"
   }
 
   dimension: query_text {
     type: string
     sql: ${TABLE}.QUERY_TEXT ;;
+    description: "Text of the SQL statement"
   }
 
   dimension: query_type_detail {
     type: string
     sql: ${TABLE}.QUERY_TYPE ;;
+    description: "DML, query, etc. If the query is currently running, or the query failed, then the query type may be UNKNOWN"
   }
 
   dimension: query_type {
@@ -188,11 +260,13 @@ view: query_history_core {
   dimension: role_name {
     type: string
     sql: ${TABLE}.ROLE_NAME ;;
+    description: "Role that was active in the session at the time of the query"
   }
 
   dimension: session_id {
     type: number
     sql: ${TABLE}.SESSION_ID ;;
+    description: "Session that executed the statement"
   }
 
   dimension_group: start {
@@ -210,6 +284,7 @@ view: query_history_core {
       year
     ]
     sql: ${TABLE}.START_TIME ;;
+    description: "Statement start time (in the UTC time zone)"
   }
 
   dimension: elapsed_time {
@@ -227,21 +302,25 @@ view: query_history_core {
   dimension: user_name {
     type: string
     sql: ${TABLE}.USER_NAME ;;
+    description: "User who issued the query"
   }
 
   dimension: warehouse_name {
     type: string
     sql: ${TABLE}.WAREHOUSE_NAME ;;
+    description: "Warehouse that the query executed on, if any"
   }
 
   dimension: warehouse_size {
     type: string
     sql: ${TABLE}.WAREHOUSE_SIZE ;;
+    description: "Size of the warehouse when this statement executed"
   }
 
   dimension: warehouse_type {
     type: string
     sql: ${TABLE}.WAREHOUSE_TYPE ;;
+    description: "Type of the warehouse when this statement executed"
   }
 
   dimension: is_prior_month_mtd {
