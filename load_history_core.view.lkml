@@ -3,7 +3,6 @@ view: load_history_core {
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/load_history.html
 
-
   # DIMENSIONS #
 
   dimension: table_id {
