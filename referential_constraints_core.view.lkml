@@ -1,33 +1,44 @@
 view: referential_constraints_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.REFERENTIAL_CONSTRAINTS ;;
 
-  # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/databases.html
+  # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/referential_constraints.html
 
   # DIMENSIONS #
 
   dimension: comment {
     type: string
     sql: ${TABLE}.COMMENT ;;
+    description: "Comment for the constraint"
   }
 
   dimension: constraint_catalog {
     type: string
     sql: ${TABLE}.CONSTRAINT_CATALOG ;;
+    description: "Database that the constraint belongs to"
+  }
+
+  dimension: constraint_catalog_id {
+    type: string
+    sql: ${TABLE}.CONSTRAINT_CATALOG_ID ;;
+    description: "Internal/system-generated identifier for the database of the constraint"
   }
 
   dimension: constraint_name {
     type: string
     sql: ${TABLE}.CONSTRAINT_NAME ;;
+    description: "Name of the constraint"
   }
 
   dimension: constraint_schema {
     type: string
     sql: ${TABLE}.CONSTRAINT_SCHEMA ;;
+    description: "Schema that the constraint belongs to"
   }
 
-  dimension: constraint_table {
+  dimension: constraint_schema_id {
     type: string
-    sql: ${TABLE}.CONSTRAINT_TABLE ;;
+    sql: ${TABLE}.CONSTRAINT_SCHEMA_ID ;;
+    description: "Internal/system-generated identifier for the schema of the constraint"
   }
 
   dimension_group: created {
@@ -42,11 +53,13 @@ view: referential_constraints_core {
       year
     ]
     sql: ${TABLE}.CREATED ;;
+    description: "Date and time when the constraint was created"
   }
 
   dimension: delete_rule {
     type: string
     sql: ${TABLE}.DELETE_RULE ;;
+    description: "Delete Rule for the current constraint"
   }
 
   dimension_group: deleted {
@@ -61,6 +74,7 @@ view: referential_constraints_core {
       year
     ]
     sql: ${TABLE}.DELETED ;;
+    description: "Date and time when the constraint was dropped"
   }
 
   dimension_group: last_altered {
@@ -75,36 +89,49 @@ view: referential_constraints_core {
       year
     ]
     sql: ${TABLE}.LAST_ALTERED_AT ;;
+    description: "Date and time when the constraint was last altered"
   }
 
   dimension: match_option {
     type: string
     sql: ${TABLE}.MATCH_OPTION ;;
+    description: "Match option for the constraint"
   }
 
   dimension: unique_constraint_catalog {
     type: string
     sql: ${TABLE}.UNIQUE_CONSTRAINT_CATALOG ;;
+    description: "Database of the unique constraint referenced by the current constraint"
+  }
+
+  dimension: unique_constraint_catalog_id {
+    type: string
+    sql: ${TABLE}.UNIQUE_CONSTRAINT_CATALOG_ID ;;
+    description: "Internal/system-generated identifier for the database of the current constraint"
   }
 
   dimension: unique_constraint_name {
     type: string
     sql: ${TABLE}.UNIQUE_CONSTRAINT_NAME ;;
+    description: "Name of the unique constraint referenced by the current constraint"
   }
 
   dimension: unique_constraint_schema {
     type: string
     sql: ${TABLE}.UNIQUE_CONSTRAINT_SCHEMA ;;
+    description: "Schema of the unique constraint referenced by the current constraint"
   }
 
-  dimension: unique_constraint_table {
+  dimension: unique_constraint_schema_id {
     type: string
-    sql: ${TABLE}.UNIQUE_CONSTRAINT_TABLE ;;
+    sql: ${TABLE}.UNIQUE_CONSTRAINT_SCHEMA_ID ;;
+    description: "Internal/system-generated identifier for the schema of the constraint"
   }
 
   dimension: update_rule {
     type: string
     sql: ${TABLE}.UPDATE_RULE ;;
+    description: "Update Rule for the current constraint"
   }
 
   # MEASURES #
