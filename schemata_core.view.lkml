@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/schemata_config.view"
+
+view: schemata {
+  extends: [schemata_config]
+}
+
 view: schemata_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.SCHEMATA ;;
 

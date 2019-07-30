@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/table_storage_metrics_config.view"
+
+view: table_storage_metrics {
+  extends: [table_storage_metrics_config]
+}
+
 view: table_storage_metrics_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.TABLE_STORAGE_METRICS ;;
 

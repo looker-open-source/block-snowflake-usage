@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/views_config.view"
+
+view: views {
+  extends: [views_config]
+}
+
 view: views_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.VIEWS ;;
 

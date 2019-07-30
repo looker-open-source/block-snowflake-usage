@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/functions_config.view"
+
+view: functions {
+  extends: [functions_config]
+}
+
 view: functions_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.FUNCTIONS ;;
 

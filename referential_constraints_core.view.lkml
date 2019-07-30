@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/referential_constraints_config.view"
+
+view: referential_constraints {
+  extends: [referential_constraints_config]
+}
+
 view: referential_constraints_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.REFERENTIAL_CONSTRAINTS ;;
 

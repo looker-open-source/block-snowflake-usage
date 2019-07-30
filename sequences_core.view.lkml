@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/sequences_config.view"
+
+view: sequences {
+  extends: [sequences_config]
+}
+
 view: sequences_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.SEQUENCES ;;
 

@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/query_history_config.view"
+
+view: query_history {
+  extends: [query_history_config]
+}
+
 view: query_history_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY ;;
 

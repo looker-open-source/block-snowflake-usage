@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/storage_usage_config.view"
+
+view: storage_usage {
+  extends: [storage_usage_config]
+}
+
 view: storage_usage_core {
   sql_table_name:
   {% if database_name._in_query or database_id._in_query %}

@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/databases_config.view"
+
+view: databases {
+  extends: [databases_config]
+}
+
 view: databases_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.DATABASES ;;
 

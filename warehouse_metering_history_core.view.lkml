@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/warehouse_metering_history_config.view"
+
+view: warehouse_metering_history {
+  extends: [warehouse_metering_history_config]
+}
+
 view: warehouse_metering_history_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY ;;
 

@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/login_history_config.view"
+
+view: login_history {
+  extends: [login_history_config]
+}
+
 view: login_history_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.LOGIN_HISTORY ;;
 

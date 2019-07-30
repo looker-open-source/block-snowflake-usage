@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/load_history_config.view"
+
+view: load_history {
+  extends: [load_history_config]
+}
+
 view: load_history_core {
  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.LOAD_HISTORY;;
 

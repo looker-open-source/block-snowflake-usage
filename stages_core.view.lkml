@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/stages_config.view"
+
+view: stages {
+  extends: [stages_config]
+}
+
 view: stages_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.STAGES ;;
 

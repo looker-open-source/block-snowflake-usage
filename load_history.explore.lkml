@@ -6,3 +6,7 @@ explore: load_history_core {
     relationship: many_to_one
   }
 }
+
+explore: load_history {
+  extends: [load_history_config]
+}

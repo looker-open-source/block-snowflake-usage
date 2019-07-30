@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/file_formats_config.view"
+
+view: file_formats {
+  extends: [file_formats_config]
+}
+
 view: file_formats_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.FILE_FORMATS ;;
 

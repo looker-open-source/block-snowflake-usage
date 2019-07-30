@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/columns_config.view"
+
+view: columns {
+  extends: [columns_config]
+}
+
 view: columns_core {
   sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.COLUMNS ;;
 
