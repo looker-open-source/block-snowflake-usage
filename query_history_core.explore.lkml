@@ -1,3 +1,5 @@
+include: "query_history_core.view.lkml"
+
 explore: query_history_core {
   extension: required
   join: databases {
@@ -10,8 +12,4 @@ explore: query_history_core {
     type: left_outer
     sql_on: ${warehouse_metering_history.warehouse_name} = ${query_history.warehouse_name} AND ${query_history.start_raw} BETWEEN ${warehouse_metering_history.start_raw} AND ${warehouse_metering_history.end_raw} ;;
   }
-}
-
-explore: query_history{
-  extends: [query_history_config]
 }

@@ -1,0 +1,31 @@
+{
+    "constants": {
+        "CONFIG_PROJECT_NAME": {
+            "label": "Config Project Name",
+            "description": "Name of the Config Project"
+        },
+        "CONNECTION_NAME": {
+            "label": "Connection name",
+            "description": "Name of Snowflake connection in Admin panel",
+            "value_constraint": "connection"
+        },
+        "DATABASE_NAME": {
+            "label": "Database Name",
+            "description": "Name of Database"
+        }
+    },
+    "models": [
+        {
+            "name": "block-snowflake-usage",
+            "connection_constant": "CONNECTION_NAME"
+        }
+    ],
+    "auxiliary_projects": [
+        {
+            "git_uri": "git@github.com:looker/block-snowflake-usage-config",
+            "git_ref": "e0fdb3f110fe7e3b273f6f4f30176e7e4c21703a",
+            "label": "Block Snowflake Usage Config",
+            "constant_name": "CONFIG_PROJECT_NAME"
+        }
+    ]
+}
