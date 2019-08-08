@@ -1,5 +1,7 @@
 project_name: "block-snowflake-usage"
 
+################ Constants ################
+
 constant: CONFIG_PROJECT_NAME {
   value: "block-snowflake-usage-config"
   export: override_required
@@ -16,6 +18,12 @@ constant: DATABASE_NAME {
   export: override_required
 }
 
+################ Dependencies ################
+
 local_dependency: {
   project: "@{CONFIG_PROJECT_NAME}"
+
+  override_constant: DATABASE_NAME {
+    value: "@{DATABASE_NAME}"
+  }
 }
