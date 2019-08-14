@@ -1,4 +1,11 @@
 {
+  "label": "Snowflake Cost and Usage",
+  "category_label": "Tools",
+  "branding": {
+    "image_uri": "https://wwwstatic-a.lookercdn.com/blocks/logos/snowflake.png",
+    "tagline": "Make it fast, keep it cheap"
+  },
+
     "constants": {
         "CONFIG_PROJECT_NAME": {
             "label": "Config Project Name",
