@@ -30,7 +30,7 @@
     "auxiliary_projects": [
         {
             "git_uri": "git://github.com/looker/block-snowflake-usage-config.git",
-            "git_ref": "251c291473f9770182d7a16d2645eb2618aac765",
+            "git_ref": "225344b56a86c94fcd4ebc13d6927060a3ca5040",
             "label": "Block Snowflake Usage Config",
             "constant_name": "CONFIG_PROJECT_NAME"
         }
