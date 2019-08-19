@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/table_constraints_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/table_constraints.view"
 
 view: table_constraints {
   extends: [table_constraints_config]

@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/columns_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/columns.view"
 
 view: columns {
   extends: [columns_config]

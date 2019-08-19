@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/tables_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/tables.view"
 
 view: tables {
   extends: [tables_config]

@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/databases_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/databases.view"
 
 view: databases {
   extends: [databases_config]

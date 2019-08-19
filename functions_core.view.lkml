@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/functions_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/functions.view"
 
 view: functions {
   extends: [functions_config]

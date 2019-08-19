@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/schemata_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/schemata.view"
 
 view: schemata {
   extends: [schemata_config]

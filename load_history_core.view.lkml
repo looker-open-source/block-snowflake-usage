@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/load_history_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/load_history.view"
 
 view: load_history {
   extends: [load_history_config]

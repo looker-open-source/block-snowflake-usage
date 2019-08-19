@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/warehouse_metering_history_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/warehouse_metering_history.view"
 
 view: warehouse_metering_history {
   extends: [warehouse_metering_history_config]

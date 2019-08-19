@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/referential_constraints_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/referential_constraints.view"
 
 view: referential_constraints {
   extends: [referential_constraints_config]

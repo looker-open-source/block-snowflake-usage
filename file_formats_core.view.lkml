@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/file_formats_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/file_formats.view"
 
 view: file_formats {
   extends: [file_formats_config]

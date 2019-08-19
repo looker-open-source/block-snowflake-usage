@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/table_storage_metrics_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/table_storage_metrics.view"
 
 view: table_storage_metrics {
   extends: [table_storage_metrics_config]

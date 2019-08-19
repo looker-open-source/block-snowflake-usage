@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/sequences_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/sequences.view"
 
 view: sequences {
   extends: [sequences_config]

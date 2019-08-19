@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/stages_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/stages.view"
 
 view: stages {
   extends: [stages_config]

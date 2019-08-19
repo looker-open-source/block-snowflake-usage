@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/query_history_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/query_history.view"
 
 view: query_history {
   extends: [query_history_config]

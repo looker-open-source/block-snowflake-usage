@@ -1,4 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/storage_usage_config.view"
+include: "//@{CONFIG_PROJECT_NAME}/storage_usage.view"
 
 view: storage_usage {
   extends: [storage_usage_config]
