@@ -8,17 +8,14 @@
 
     "constants": {
         "CONFIG_PROJECT_NAME": {
-            "label": "Config Project Name",
-            "description": "Name of the Config Project"
+            "label": "Config Project Name"
         },
         "CONNECTION_NAME": {
             "label": "Connection name",
-            "description": "Name of Snowflake connection in Admin panel",
             "value_constraint": "connection"
         },
         "DATABASE_NAME": {
-            "label": "Database Name",
-            "description": "Name of Database"
+            "label": "Database Name"
         }
     },
     "models": [
@@ -31,7 +28,7 @@
         {
             "git_uri": "git://github.com/looker/block-snowflake-usage-config.git",
             "git_ref": "225344b56a86c94fcd4ebc13d6927060a3ca5040",
-            "label": "Block Snowflake Usage Config",
+            "label": "Snowflake Cost and Usage Config",
             "constant_name": "CONFIG_PROJECT_NAME"
         }
     ]
