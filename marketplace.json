@@ -1,6 +1,6 @@
 {
   "label": "Snowflake Cost and Usage",
-  "category_label": "Tools",
+  "category_label": "Models",
   "branding": {
     "image_uri": "https://wwwstatic-a.lookercdn.com/blocks/logos/snowflake.png",
     "tagline": "Know and Explore your Snowflake Usage"
