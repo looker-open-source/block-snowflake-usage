@@ -38,7 +38,7 @@ This Block covers all of the core metrics that come with the dataset, as well as
 #### Accessing the ACCOUNT USAGE Share
 To access the ACCOUNT_USAGE share, an account administrator must grant the user provided in your [looker connection](https://discourse.looker.com/t/connecting-to-snowflake/203) with access to the appropriate schema.
 
-As an example, The commands below would be used if the user in your looker connection was granted the "looker_role" and that is how you plan on permissioning the SNOWFLAKE shared DB:
+As an example, The commands below would be used if the user in your looker connection was granted the "looker_role" and that is how you plan on permissioning the SNOWFLAKE (or the database you specified on install) shared DB:
 
 ```
 grant usage on database SNOWFLAKE to role looker_role;

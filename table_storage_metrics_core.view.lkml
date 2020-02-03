@@ -5,7 +5,7 @@ view: table_storage_metrics {
 }
 
 view: table_storage_metrics_core {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.TABLE_STORAGE_METRICS ;;
+  sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.TABLE_STORAGE_METRICS ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/table_storage_metrics.html
 

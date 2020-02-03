@@ -5,7 +5,7 @@ view: databases {
 }
 
 view: databases_core {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.DATABASES ;;
+  sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.DATABASES ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/databases.html
 

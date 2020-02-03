@@ -5,7 +5,7 @@ view: columns {
 }
 
 view: columns_core {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.COLUMNS ;;
+  sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.COLUMNS ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/columns.html
 

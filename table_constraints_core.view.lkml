@@ -5,7 +5,7 @@ view: table_constraints {
 }
 
 view: table_constraints_core {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.TABLE_CONSTRAINTS ;;
+  sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.TABLE_CONSTRAINTS ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/table_constraints.html
 

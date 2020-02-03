@@ -5,7 +5,7 @@ view: file_formats {
 }
 
 view: file_formats_core {
-  sql_table_name: SNOWFLAKE.ACCOUNT_USAGE.FILE_FORMATS ;;
+  sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.FILE_FORMATS ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/file_formats.html
 
