@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/functions.view"
-
 view: functions {
-  extends: [functions_config]
-}
-
-view: functions_core {
   sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.FUNCTIONS ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/functions.html

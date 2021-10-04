@@ -20,7 +20,7 @@
     },
     "models": [
         {
-            "name": "block_snowflake_usage",
+            "name": "block_snowflake_usage_v2",
             "connection_constant": "CONNECTION_NAME"
         }
     ],

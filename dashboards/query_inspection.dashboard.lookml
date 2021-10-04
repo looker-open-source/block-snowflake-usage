@@ -4,7 +4,7 @@
   elements:
   - title: Execution Time
     name: Execution Time
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: single_value
     fields: [query_history.average_execution_time, query_history.query_text_selector]
@@ -37,7 +37,7 @@
     height: 4
   - title: Query Count
     name: Query Count
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: single_value
     fields: [query_history.query_text_selector, query_history.query_count]
@@ -71,7 +71,7 @@
     height: 4
   - title: Compilation Time
     name: Compilation Time
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: single_value
     fields: [query_history.query_text_selector, query_history.average_compilation_time]
@@ -104,7 +104,7 @@
     height: 4
   - title: Queued Overload Time
     name: Queued Overload Time
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: single_value
     fields: [query_history.query_text_selector, query_history.average_queued_overload_time]
@@ -137,7 +137,7 @@
     height: 4
   - title: Query Text
     name: Query Text
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: table
     fields: [query_history.query_id, query_history.query_text]
@@ -163,7 +163,7 @@
     height: 9
   - title: Warehouse
     name: Warehouse
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: looker_pie
     fields: [query_history.query_count, query_history.warehouse_name]
@@ -232,7 +232,7 @@
     height: 8
   - title: Database
     name: Database
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: looker_pie
     fields: [query_history.query_count, query_history.database_name]
@@ -301,7 +301,7 @@
     height: 8
   - title: Query Type
     name: Query Type
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: looker_pie
     fields: [query_history.query_count, query_history.query_type]
@@ -371,7 +371,7 @@
     height: 8
   - title: Pattern-matching Queries
     name: Pattern-matching Queries
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: looker_column
     fields: [query_history.query_count, query_history.start_date]
@@ -438,7 +438,7 @@
     height: 10
   - title: User
     name: User
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: looker_bar
     fields: [query_history.query_count, query_history.user_name]
@@ -510,7 +510,7 @@
     default_value: ''
     allow_multiple_values: true
     required: true
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     listens_to_filters: []
     field: query_history.query_text
@@ -520,7 +520,7 @@
     default_value: 4 weeks
     allow_multiple_values: true
     required: false
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     listens_to_filters: []
     field: query_history.start_date

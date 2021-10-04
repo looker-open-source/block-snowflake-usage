@@ -4,7 +4,7 @@
   elements:
   - title: Average Execution Time by User (Last 4 Weeks)
     name: Average Execution Time by User (Last 4 Weeks)
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: looker_column
     fields: [query_history.user_name, query_history.current_four_weeks_avg_exec_time]
@@ -70,7 +70,7 @@
     height: 8
   - title: Failed Logins by User (Last 4 Weeks)
     name: Failed Logins by User (Last 4 Weeks)
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: login_history
     type: table
     fields: [login_history.user_name, login_history.logins, login_history.total_failed_logins,
@@ -118,7 +118,7 @@
     height: 7
   - title: Failed Logins by User and Connecting Client (Last 4 Weeks)
     name: Failed Logins by User and Connecting Client (Last 4 Weeks)
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: login_history
     type: table
     fields: [login_history.user_name, login_history.logins, login_history.total_failed_logins,
@@ -174,7 +174,7 @@
     height: 9
   - title: Billable TB (Last 4 Weeks)
     name: Billable TB (Last 4 Weeks)
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: storage_usage
     type: single_value
     fields: [storage_usage.current_four_weeks_billable_tb, storage_usage.prior_four_weeks_billable_tb]
@@ -223,7 +223,7 @@
     height: 4
   - title: Total Queries (Last 4 Weeks)
     name: Total Queries (Last 4 Weeks)
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: single_value
     fields: [query_history.current_four_weeks_query_count, query_history.prior_four_weeks_query_count]
@@ -272,7 +272,7 @@
     height: 4
   - title: Data Loading
     name: Data Loading
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: load_history
     type: single_value
     fields: [load_history.total_row_count, load_history.total_error_count]
@@ -332,7 +332,7 @@
     height: 7
   - title: Total Rows Loaded (Last 4 Weeks)
     name: Total Rows Loaded (Last 4 Weeks)
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: load_history
     type: looker_column
     fields: [load_history.total_row_count, load_history.last_load_time_date]
@@ -387,7 +387,7 @@
     height: 7
   - title: Database Storage Growth
     name: Database Storage Growth
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: storage_usage
     type: looker_line
     fields: [storage_usage.billable_tb, storage_usage.usage_month, storage_usage.database_name]
@@ -451,7 +451,7 @@
     height: 7
   - title: Billable TB by Month
     name: Billable TB by Month
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: storage_usage
     type: looker_line
     fields: [storage_usage.billable_tb, storage_usage.usage_month]
@@ -510,7 +510,7 @@
     height: 7
   - title: Query Volume and Runtime
     name: Query Volume and Runtime
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: looker_column
     fields: [query_history.start_week, query_history.query_count, query_history.average_execution_time]
@@ -590,7 +590,7 @@
     height: 8
   - title: Credits Used By Warehouse (Last 4 Weeks)
     name: Credits Used By Warehouse (Last 4 Weeks)
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: warehouse_metering_history
     type: looker_column
     fields: [warehouse_metering_history.warehouse_name, warehouse_metering_history.current_four_weeks_credits_used]
@@ -649,7 +649,7 @@
     height: 8
   - title: Credits Used (Last 4 Weeks)
     name: Credits Used (Last 4 Weeks)
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: warehouse_metering_history
     type: single_value
     fields: [warehouse_metering_history.current_four_weeks_credits_used, warehouse_metering_history.prior_four_weeks_credits_used]
@@ -698,7 +698,7 @@
     height: 4
   - title: Total Queries by Warehouse (Last 4 Weeks)
     name: Total Queries by Warehouse (Last 4 Weeks)
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: looker_column
     fields: [query_history.warehouse_name, query_history.current_four_weeks_query_count]
@@ -764,7 +764,7 @@
     height: 8
   - title: Credits by Date
     name: Credits by Date
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: warehouse_metering_history
     type: looker_column
     fields: [warehouse_metering_history.total_credits_used, warehouse_metering_history.warehouse_name,
@@ -830,7 +830,7 @@
     height: 8
   - title: Credits by Month
     name: Credits by Month
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: warehouse_metering_history
     type: looker_column
     fields: [warehouse_metering_history.total_credits_used, warehouse_metering_history.warehouse_name,
@@ -896,7 +896,7 @@
     height: 8
   - title: Avg Exec Time (Last 4 Weeks)
     name: Avg Exec Time (Last 4 Weeks)
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: single_value
     fields: [query_history.current_four_weeks_avg_exec_time, query_history.prior_four_weeks_avg_exec_time]
@@ -947,7 +947,7 @@
     height: 4
   - title: Average Execution Time by Query Type and Warehouse Size (Last 4 Weeks)
     name: Average Execution Time by Query Type and Warehouse Size (Last 4 Weeks)
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: looker_column
     fields: [query_history.query_type, query_history.warehouse_size, query_history.current_four_weeks_avg_exec_time]
@@ -1022,7 +1022,7 @@
     height: 8
   - title: Query Count to Credits Used Ratio
     name: Query Count to Credits Used Ratio
-    model: block_snowflake_usage
+    model: block_snowflake_usage_v2
     explore: query_history
     type: looker_column
     fields: [query_history.start_date, query_history.query_count, warehouse_metering_history.total_credits_used,

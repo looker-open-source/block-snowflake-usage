@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/referential_constraints.view"
-
 view: referential_constraints {
-  extends: [referential_constraints_config]
-}
-
-view: referential_constraints_core {
   sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.REFERENTIAL_CONSTRAINTS ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/referential_constraints.html

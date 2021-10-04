@@ -1,10 +1,5 @@
-include: "//@{CONFIG_PROJECT_NAME}/databases.view"
 
 view: databases {
-  extends: [databases_config]
-}
-
-view: databases_core {
   sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.DATABASES ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/databases.html

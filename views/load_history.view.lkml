@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/load_history.view"
-
 view: load_history {
-  extends: [load_history_config]
-}
-
-view: load_history_core {
  sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.LOAD_HISTORY;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/load_history.html

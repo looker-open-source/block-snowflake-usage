@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/login_history.view"
-
 view: login_history {
-  extends: [login_history_config]
-}
-
-view: login_history_core {
   sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.LOGIN_HISTORY ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/login_history.html
