@@ -7,9 +7,6 @@
   },
 
     "constants": {
-        "CONFIG_PROJECT_NAME": {
-            "label": "Config Project Name"
-        },
         "CONNECTION_NAME": {
             "label": "Connection name",
             "value_constraint": "connection"
@@ -22,14 +19,6 @@
         {
             "name": "block_snowflake_usage_v2",
             "connection_constant": "CONNECTION_NAME"
-        }
-    ],
-    "auxiliary_projects": [
-        {
-            "git_uri": "git://github.com/looker/block-snowflake-usage-config.git",
-            "git_ref": "dcf5c8e239bb51782675f783ea9c84ba119f8d22",
-            "label": "Snowflake Cost and Usage Config",
-            "constant_name": "CONFIG_PROJECT_NAME"
         }
     ]
 }
