@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/table_constraints.view"
-
 view: table_constraints {
-  extends: [table_constraints_config]
-}
-
-view: table_constraints_core {
   sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.TABLE_CONSTRAINTS ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/table_constraints.html

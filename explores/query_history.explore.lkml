@@ -1,7 +1,6 @@
-include: "query_history_core.view.lkml"
+include: "/views/*.view"
 
-explore: query_history_core {
-  extension: required
+explore: query_history {
   join: databases {
     type: left_outer
     sql_on: ${query_history.database_name} = ${databases.database_name} ;;

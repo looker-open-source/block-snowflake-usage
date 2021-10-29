@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/table_storage_metrics.view"
-
 view: table_storage_metrics {
-  extends: [table_storage_metrics_config]
-}
-
-view: table_storage_metrics_core {
   sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.TABLE_STORAGE_METRICS ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/table_storage_metrics.html

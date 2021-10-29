@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/schemata.view"
-
 view: schemata {
-  extends: [schemata_config]
-}
-
-view: schemata_core {
   sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.SCHEMATA ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/schemata.html

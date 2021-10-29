@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/warehouse_metering_history.view"
-
-view: warehouse_metering_history {
-  extends: [warehouse_metering_history_config]
-}
-
-view: warehouse_metering_history_core {
+view: warehouse_metering_history{
   sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/warehouse_metering_history.html

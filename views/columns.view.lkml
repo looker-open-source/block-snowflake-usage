@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/columns.view"
-
 view: columns {
-  extends: [columns_config]
-}
-
-view: columns_core {
   sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.COLUMNS ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/columns.html

@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/file_formats.view"
-
 view: file_formats {
-  extends: [file_formats_config]
-}
-
-view: file_formats_core {
   sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.FILE_FORMATS ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/file_formats.html

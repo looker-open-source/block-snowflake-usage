@@ -48,3 +48,7 @@ grant select on all tables in schema SNOWFLAKE.ACCOUNT_USAGE to role looker_role
 
 #### Dashboards
 The dashboard can be used as is, or customized to your specific requirements. If you've customized the model name, rename the model in each LookML Dashboard element from "snowflake_usage" to the model name you've selected. We recommend using a global Find & Replace for this.
+
+#### Customization
+- This block uses refinements for customization. For more information on using refinements to customize marketplace blocks, please see [this link](https://docs.looker.com/data-modeling/marketplace/customize-blocks#marketplace_blocks_that_use_refinements).
+- Refinements can be used to add new content or modify existing content without the need to copy individual LookML elements into a new project.

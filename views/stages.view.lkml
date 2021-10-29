@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/stages.view"
-
 view: stages {
-  extends: [stages_config]
-}
-
-view: stages_core {
   sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.STAGES ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/stages.html

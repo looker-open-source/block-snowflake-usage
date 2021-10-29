@@ -1,10 +1,4 @@
-include: "//@{CONFIG_PROJECT_NAME}/query_history.view"
-
 view: query_history {
-  extends: [query_history_config]
-}
-
-view: query_history_core {
   sql_table_name: @{DATABASE_NAME}.ACCOUNT_USAGE.QUERY_HISTORY ;;
 
   # Field Descriptions from Snowflake Documentation: https://docs.snowflake.net/manuals/sql-reference/account-usage/query_history.html

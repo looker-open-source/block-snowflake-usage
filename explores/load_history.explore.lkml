@@ -1,8 +1,6 @@
-include: "load_history_core.view.lkml"
+include: "/views/*.view"
 
-
-explore: load_history_core {
-  extension: required
+explore: load_history{
   fields: [ALL_FIELDS*,-tables.table_name,-tables.id]
   join: tables {
     sql_on: ${load_history.table_id} = ${tables.id} ;;
