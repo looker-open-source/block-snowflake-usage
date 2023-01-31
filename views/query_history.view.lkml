@@ -42,6 +42,16 @@ view: query_history {
       url: "/explore/i__looker/history?fields=query.model,query.view,history.query_run_count,user.count,history.runtime_tiers&pivots=history.runtime_tiers&f[query.model]=-EMPTY&f[history.runtime]=NOT NULL&f[user.name]=&f[history.created_date]=10 weeks&f[history.id]={{ value }}&sorts=query.model,query.view,history.runtime_tiers&limit=10&column_limit=50"
     }
   }
+  
+  dimension: history_slug {
+    description: "Use this history slug to map query to Looker history id and get query text"
+    type: string
+    sql: ${looker_query_context}:history_slug ;;
+    link: {
+      label: "See History ID in i__looker"
+      url: "/explore/i__looker/history?fields=query.model,query.view,history.id, history.runtime,sql_text.text&f[query.model]=-EMPTY&f[history.runtime]=NOT NULL&f[user.name]=&f[history.created_date]=10 weeks&f[history.slug]={{ value }}&sorts=query.model,query.view&limit=10&column_limit=50"
+    }
+  }
 
   dimension: looker_user_id {
     type: number
