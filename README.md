@@ -1,3 +1,5 @@
+This is not an officially supported Google product. This project is not eligible for the [Google Open Source Software Vulnerability Rewards Program](https://bughunters.google.com/open-source-security).
+
 ## What does this Block do for me?
 
 **(1) Reduce Costs and Optimize Performance** - Gain a holistic view across your datawarehouse and optimize across the board. Identify your longest running queries, most costly queries, troublesome users, and more, to uncover the most impactful cost-saving and performance-enhancing opportunities.
